@@ -1,0 +1,122 @@
+1- 
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+  int INDICE = 13;
+  int SOMA = 0;
+  int K = 0;
+  
+  while(K < INDICE){
+    K = K + 1;
+    SOMA = SOMA + K; 
+  }
+  
+  cout << "SOMA: "  << SOMA << endl;
+  
+}
+
+2- 
+
+#include <iostream>
+using namespace std;
+
+bool fibonacci(int n) {
+    int a = 0, b = 1;
+    while (a < n) {
+        int temp = a;
+        a = b;
+        b = temp + b;
+    }
+    return a == n;
+}
+
+int main() {
+    int numero;
+    cout << "Informe um número: ";
+    cin >> numero;
+    if (fibonacci(numero)) {
+        cout << "O número " << numero << " esta na sequencia" << endl;
+    } else {
+        cout << "O número " << numero << " nao esta na sequencia" << endl;
+    }
+    return 0;
+}
+
+3-
+import json
+
+def calcular_faturamento(faturamento):
+    faturamento_positivo = [dia['valor'] for dia in faturamento if dia['valor'] > 0]
+
+    menor_valor = min(faturamento_positivo)
+    maior_valor = max(faturamento_positivo)
+
+    media_mensal = sum(faturamento_positivo) / len(faturamento_positivo)
+
+    dias_superior_media = sum(1 for valor in faturamento_positivo if valor > media_mensal)
+
+    return menor_valor, maior_valor, dias_superior_media
+
+def main():
+    dados = {
+        "faturamento": [
+            {"dia": 1, "valor": 1500.0},
+            {"dia": 2, "valor": 2000.0},
+            {"dia": 3, "valor": 0.0},
+            {"dia": 4, "valor": 8250.0},
+            {"dia": 5, "valor": 7892.0},
+            {"dia": 6, "valor": 120.0},
+            {"dia": 7, "valor": 11000.0},
+            {"dia": 8, "valor": 15.0}
+        ]
+    }
+
+    faturamento = dados['faturamento']
+
+    menor_valor, maior_valor, dias_superior_media = calcular_faturamento(faturamento)
+
+    print(f"Menor valor de faturamento: R${menor_valor:.2f}")
+    print(f"Maior valor de faturamento: R${maior_valor:.2f}")
+    print(f"Número de dias com faturamento superior à média: {dias_superior_media}")
+
+if __name__ == "__main__":
+    main()
+
+4-
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double faturamentos[] = {67836.43, 36678.66, 29229.88, 27165.48, 19849.53};
+    string estados[] = {"SP", "RJ", "MG", "ES", "Outros"};
+
+    double total = 0;
+    for (double faturamento : faturamentos) {
+        total += faturamento;
+    }
+
+    cout << "Faturamento total: R$" << total << "\n\n";
+
+    for (int i = 0; i < 5; i++) {
+        cout << estados[i] << ": " << (faturamentos[i] / total) * 100 << "%\n";
+    }
+
+    return 0;
+}
+
+5- 
+string = "Maria Vitoria Suzarth"
+
+def inverter_string(s):
+    invertida = ""
+    for char in s:
+        invertida = char + invertida
+    return invertida
+
+string_invertida = inverter_string(string)
+
+print("String original: {}".format(string))
+print("String invertida: {}".format(string_invertida))
